@@ -3,347 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purple Beats | Sua Playlist Favorita</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <title>The Whisper of Starfall | Edição Oficial de Luxo</title>
     <style>
-        /* Cores e Tema (Roxo e Preto) */
+        /* CSS Integrado - Tema Galáxia (Roxo e Azul Profundo) */
         :root {
-            --bg-black: #0d0b14;
-            --bg-dark-purple: #160e29;
-            --card-bg: #1f1538;
-            --purple-primary: #8b5cf6;
-            --purple-glow: #a78bfa;
-            --text-light: #f3f4f6;
-            --text-muted: #9ca3af;
-            --heart-red: #ef4444;
+            --bg-space: #070510;
+            --purple-deep: #150a2a;
+            --purple-glow: #7b2cbf;
+            --purple-light: #9d4edd;
+            --blue-galaxy: #0d1b2a;
+            --blue-nebula: #1b263b;
+            --cyan-starlight: #4cc9f0;
+            --gold-accent: #ffd700;
+            --text-main: #f8f9fa;
+            --text-muted: #c7d2fe;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--bg-black);
-            color: var(--text-light);
-            line-height: 1.6;
+            background-color: var(--bg-space);
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(123, 44, 191, 0.35) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(76, 201, 240, 0.25) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(27, 38, 59, 0.5) 0%, transparent 60%);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        /* Topo e Navegação */
+        /* Cabeçalho */
         header {
-            background-color: var(--bg-dark-purple);
-            padding: 1.2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 2px solid var(--purple-primary);
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--purple-glow);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--purple-glow);
-        }
-
-        /* Banner Hero */
-        .hero {
-            padding: 4rem 1rem;
-            text-align: center;
-            background: linear-gradient(180deg, var(--bg-dark-purple) 0%, var(--bg-black) 100%);
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            color: var(--purple-glow);
-            margin-bottom: 0.5rem;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-        }
-
-        /* Container Principal */
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .section-title {
-            font-size: 1.6rem;
-            color: var(--purple-glow);
-            margin-bottom: 1.2rem;
-            border-left: 4px solid var(--purple-primary);
-            padding-left: 0.8rem;
-        }
-
-        /* Lista de Músicas */
-        .music-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .music-card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 1.2rem;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            transition: transform 0.3s, border-color 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .music-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--purple-primary);
-        }
-
-        .music-info h3 {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 0.2rem;
-        }
-
-        .music-info p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        /* Player Áudio */
-        audio {
-            width: 100%;
-            height: 35px;
-            margin-bottom: 0.8rem;
-            filter: invert(1) hue-rotate(220deg);
-        }
-
-        .card-actions {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .btn-favorite {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 1.4rem;
-            cursor: pointer;
-            transition: color 0.3s, transform 0.2s;
-        }
-
-        .btn-favorite:hover {
-            transform: scale(1.2);
-        }
-
-        .btn-favorite.active {
-            color: var(--heart-red);
-        }
-
-        /* Mensagem de Favoritos Vazios */
-        .empty-msg {
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: var(--bg-dark-purple);
-            border-top: 1px solid rgba(139, 92, 246, 0.2);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 3rem;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <a href="#" class="logo">🎧 Purple Beats</a>
-        <nav>
-            <a href="#internacionais">Internacionais</a>
-            <a href="#nacionais">Em Português</a>
-            <a href="#favoritos">Favoritos</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Sua Playlist Favorita</h1>
-        <p>Arctic Monkeys, Nirvana, Chase Atlantic e os clássicos da música nacional.</p>
-    </section>
-
-    <div class="container">
-
-        <section id="internacionais">
-            <h2 class="section-title">🌍 Músicas Internacionais</h2>
-            <div class="music-grid">
-
-                <div class="music-card" data-id="1">
-                    <div class="music-info">
-                        <h3>Do I Wanna Know?</h3>
-                        <p>Arctic Monkeys • Indie Rock</p>
-                    </div>
-                    <audio controls preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
-                    <div class="card-actions">
-                        <button class="btn-favorite" onclick="toggleFavorite(this, 1)">♥</button>
-                    </div>
-                </div>
-
-                <div class="music-card" data-id="2">
-                    <div class="music-info">
-                        <h3>R U Mine?</h3>
-                        <p>Arctic Monkeys • Indie Rock</p>
-                    </div>
-                    <audio controls preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"></audio>
-                    <div class="card-actions">
-                        <button class="btn-favorite" onclick="toggleFavorite(this, 2)">♥</button>
-                    </div>
-                </div>
-
-                <div class="music-card" data-id="3">
-                    <div class="music-info">
-                        <h3>Smells Like Teen Spirit</h3>
-                        <p>Nirvana • Grunge / Rock</p>
-                    </div>
-                    <audio controls preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"></audio>
-                    <div class="card-actions">
-                        <button class="btn-favorite" onclick="toggleFavorite(this, 3)">♥</button>
-                    </div>
-                </div>
-
-                <div class="music-card" data-id="4">
-                    <div class="music-info">
-                        <h3>Swim</h3>
-                        <p>Chase Atlantic • Alternative / R&B</p>
-                    </div>
-                    <audio controls preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"></audio>
-                    <div class="card-actions">
-                        <button class="btn-favorite" onclick="toggleFavorite(this, 4)">♥</button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="nacionais">
-            <h2 class="section-title">🇧🇷 Músicas em Português</h2>
-            <div class="music-grid">
-
-                <div class="music-card" data-id="5">
-                    <div class="music-info">
-                        <h3>Tempo Perdido</h3>
-                        <p>Legião Urbana • Rock Nacional</p>
-                    </div>
-                    <audio controls preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"></audio>
-                    <div class="card-actions">
-                        <button class="btn-favorite" onclick="toggleFavorite(this, 5)">♥</button>
-                    </div>
-                </div>
-
-                <div class="music-card" data-id="6">
-                    <div class="music-info">
-                        <h3>Sozinho</h3>
-                        <p>Caetano Veloso • MPB</p>
-                    </div>
-                    <audio controls preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"></audio>
-                    <div class="card-actions">
-                        <button class="btn-favorite" onclick="toggleFavorite(this, 6)">♥</button>
-                    </div>
-                </div>
-
-                <div class="music-card" data-id="7">
-                    <div class="music-info">
-                        <h3>Garota de Ipanema</h3>
-                        <p>Tom Jobim • Bossa Nova</p>
-                    </div>
-                    <audio controls preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"></audio>
-                    <div class="card-actions">
-                        <button class="btn-favorite" onclick="toggleFavorite(this, 7)">♥</button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="favoritos">
-            <h2 class="section-title">⭐ Meus Favoritos</h2>
-            <div class="music-grid" id="favoritesGrid">
-                <p class="empty-msg" id="emptyMsg">Você ainda não adicionou nenhuma música aos favoritos.</p>
-            </div>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Purple Beats. Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
-        const favorites = new Set();
-
-        function toggleFavorite(btn, songId) {
-            const card = btn.closest('.music-card');
-            const favoritesGrid = document.getElementById('favoritesGrid');
-            const emptyMsg = document.getElementById('emptyMsg');
-
-            if (favorites.has(songId)) {
-                favorites.delete(songId);
-                btn.classList.remove('active');
-                
-                const favCard = favoritesGrid.querySelector(`[data-fav-id="${songId}"]`);
-                if (favCard) favCard.remove();
-
-            } else {
-                favorites.add(songId);
-                btn.classList.add('active');
-
-                const cloneCard = card.cloneNode(true);
-                cloneCard.setAttribute('data-fav-id', songId);
-                
-                const cloneBtn = cloneCard.querySelector('.btn-favorite');
-                cloneBtn.classList.add('active');
-                cloneBtn.onclick = function() {
-                    toggleFavorite(btn, songId);
-                };
-
-                favoritesGrid.appendChild(cloneCard);
-            }
-
-            if (favorites.size > 0) {
-                emptyMsg.style.display = 'none';
-            } else {
-                emptyMsg.style.display = 'block';
-            }
-        }
-    </script>
-
-</body>
-</html>
+            background: rgba(7, 5, 16, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 1.2
