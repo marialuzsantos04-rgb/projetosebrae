@@ -3,265 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Mini Caixinha de Som - Loja Virtual</title>
-=======
-    <title>Mini Caixinha Cute - Loja Virtual</title>
->>>>>>> 7c9d6ba1b307161a251a5aff0e98562f2f19f6a6
+    <title>SoundPulse Mini - Alta Fidelidade Sonora</title>
     <style>
-<<<<<<< HEAD
-        /* Estilos Globais e Tema Preto & Lilás */
-=======
-        /* Estilos Globais e Tema Preto & Lilás Cute */
->>>>>>> 7c9d6ba1b307161a251a5aff0e98562f2f19f6a6
         :root {
-            --bg-dark: #121214;
-            --card-bg: #1e1e24;
-            --accent-purple: #c896ff;
-            --accent-soft: #e0c3fc;
-            --text-light: #f5f5f7;
-            --text-muted: #a0a0b0;
+            --bg-gradient: linear-gradient(135deg, #0b0b10 0%, #1a0f2e 100%);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --primary-purple: #a855f7;
+            --primary-pink: #ec4899;
+            --text-main: #f8fafc;
+            --text-secondary: #94a3b8;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            justify-content: space-between;
         }
 
-        /* Cabeçalho */
+        /* Navbar */
         header {
-            background-color: #1a1a20;
-            padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid var(--accent-purple);
+            padding: 24px 8%;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent-purple);
-            text-shadow: 0 0 8px rgba(200, 150, 255, 0.4);
+        .brand-logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-purple), var(--primary-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
         }
 
-        .cart-icon {
-            background-color: var(--accent-purple);
-            color: var(--bg-dark);
-            padding: 10px 18px;
-            border-radius: 20px;
-            font-weight: bold;
+        .cart-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
+            transition: all 0.3s ease;
         }
 
-        .cart-icon:hover {
-            transform: scale(1.05);
-            background-color: var(--accent-soft);
+        .cart-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
-        /* Área do Produto */
+        /* Card Principal */
         main {
-            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
+            flex: 1;
         }
 
         .product-card {
-            background-color: var(--card-bg);
-            border: 2px solid rgba(200, 150, 255, 0.2);
-            border-radius: 24px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 28px;
+            max-width: 950px;
             width: 100%;
-            max-width: 850px;
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(200, 150, 255, 0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                        0 0 40px rgba(168, 85, 247, 0.2);
         }
 
-        .product-image {
-            flex: 1;
-            min-width: 300px;
-            background-color: #262630;
+        /* Container da Imagem */
+        .product-visual {
+            background: radial-gradient(circle at center, rgba(168, 85, 247, 0.2) 0%, transparent 70%);
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px;
-        }
-
-<<<<<<< HEAD
-        .product-image img {
-            max-width: 100%;
-            height: auto;
-=======
-        .product-image img {
-            max-width: 100%;
->>>>>>> 7c9d6ba1b307161a251a5aff0e98562f2f19f6a6
-            border-radius: 16px;
-<<<<<<< HEAD
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            object-fit: cover;
-=======
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
->>>>>>> 7c9d6ba1b307161a251a5aff0e98562f2f19f6a6
-        }
-
-        .product-info {
-            flex: 1;
-            min-width: 300px;
             padding: 40px;
+            position: relative;
+        }
+
+        .product-visual img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 20px;
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .product-card:hover .product-visual img {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        /* Detalhes do Produto */
+        .product-details {
+            padding: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .tag {
+        .badge {
             align-self: flex-start;
-            background-color: rgba(200, 150, 255, 0.2);
-            color: var(--accent-purple);
-            padding: 5px 12px;
+            background: linear-gradient(90deg, var(--primary-purple), var(--primary-pink));
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        p.description {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        /* Especificações */
+        .specs {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .spec-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 16px;
             border-radius: 12px;
             font-size: 0.85rem;
-            font-weight: bold;
-            margin-bottom: 12px;
+            color: var(--text-secondary);
         }
 
-        .product-title {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
-
-        .product-description {
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 25px;
+        .spec-item strong {
+            display: block;
+            color: var(--text-main);
             font-size: 0.95rem;
         }
 
-        .price-container {
-            margin-bottom: 25px;
+        /* Preço e Compra */
+        .price-tag {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
-        .price {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: var(--accent-purple);
+        .current-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-main);
         }
 
-        .price-info {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+        .old-price {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            text-decoration: line-through;
         }
 
-        /* Botão Adicionar ao Carrinho */
-        .btn-add-cart {
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-soft));
-            color: var(--bg-dark);
+        .buy-btn {
+            background: linear-gradient(90deg, var(--primary-purple), var(--primary-pink));
+            color: #fff;
             border: none;
-            padding: 16px 24px;
-            border-radius: 30px;
-            font-size: 1.05rem;
-            font-weight: bold;
+            padding: 18px;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(200, 150, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.3);
         }
 
-        .btn-add-cart:hover {
+        .buy-btn:hover {
+            opacity: 0.95;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(200, 150, 255, 0.5);
+            box-shadow: 0 15px 30px rgba(236, 72, 153, 0.5);
         }
 
-        /* Rodapé */
+        /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
-            color: var(--text-muted);
+            padding: 24px;
+            color: var(--text-secondary);
             font-size: 0.85rem;
-            border-top: 1px solid rgba(250, 250, 250, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .product-card {
+                grid-template-columns: 1fr;
+            }
+
+            .product-details {
+                padding: 30px;
+            }
+
+            header {
+                padding: 20px 5%;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-<<<<<<< HEAD
-        <div class="logo">✨ SoundStyle</div>
-        <div class="cart-icon">🛒 Carrinho (0)</div>
-=======
-        <div class="logo">✨ CuteSound</div>
-        <div class="cart-icon">🛒 Carrinho (0)</div>
->>>>>>> 7c9d6ba1b307161a251a5aff0e98562f2f19f6a6
+        <div class="brand-logo">SOUNDPULSE</div>
+        <button class="cart-btn">🛒 Carrinho (0)</button>
     </header>
 
-<<<<<<< HEAD
     <main>
         <div class="product-card">
             
-            <div class="product-image">
-                <img src="imagem-caixinha.jpg" alt="Caixinha de Som Lilás e Preta">
-=======
-    <main>
-        <div class="product-card">
-            
-            <div class="product-image">
-                <img src="https://via.placeholder.com/350x350/2b2438/c896ff?text=Caixinha+de+Som+Cute" alt="Caixinha de Som Lilás">
->>>>>>> 7c9d6ba1b307161a251a5aff0e98562f2f19f6a6
+            <div class="product-visual">
+                <img src="https://via.placeholder.com/400x400/2a1b4e/a855f7?text=Caixinha+de+Som" alt="Caixinha de Som SoundPulse">
             </div>
 
-<<<<<<< HEAD
-            <div class="product-info">
-                <span class="tag">EDITION LIMITED 💜</span>
-                <h1 class="product-title">Mini Caixa de Som Bluetooth</h1>
+            <div class="product-info product-details">
+                <span class="badge">Lançamento</span>
+                <h1>Caixinha de Som Bluetooth Pro</h1>
                 
-                <p class="product-description">
-                    Sua música favorita com um toque de elegância! Design compacto e moderno em tom lilás pastel com detalhes em preto, iluminação LED suave, conexão Bluetooth rápida e som limpo de alta qualidade para deixar seu ambiente super aconchegante.
+                <p class="description">
+                    Eleve sua experiência sonora a outro nível. Design moderno com iluminação LED reativa, conexão Bluetooth 5.3 ultra-rápida, resistência à água e bateria duradoura para reprodução sem interrupções.
                 </p>
-=======
-            <div class="product-info">
-                <span class="tag">EDITION LIMITED 💜</span>
-                <h1 class="product-title">Mini Caixa de Som Cute Bluetooth</h1>
-                
-                <p class="product-description">
-                    Sua música favorita com um toque de fofura! Design compacto e moderno em tom lilás pastel, iluminação LED suave, conexão Bluetooth rápida e som limpo de alta qualidade para deixar seu quarto super aconchegante.
-                </p>
->>>>>>> 7c9d6ba1b307161a251a5aff0e98562f2f19f6a6
 
-                <div class="price-container">
-<<<<<<< HEAD
-                    <span class="price">R$ 189,90</span>
-                    <p class="price-info">em até 3x de R$ 63,30 sem juros</p>
-=======
-                    <span class="price">R$ 129,90</span>
-                    <p class="price-info">em até 3x de R$ 43,30 sem juros</p>
->>>>>>> 7c9d6ba1b307161a251a5aff0e98562f2f19f6a6
+                <div class="specs">
+                    <div class="spec-item">
+                        <strong>12 Horas</strong> Bateria
+                    </div>
+                    <div class="spec-item">
+                        <strong>IPX7</strong> À prova d'água
+                    </div>
+                    <div class="spec-item">
+                        <strong>360°</strong> Som Surround
+                    </div>
                 </div>
 
-                <button class="btn-add-cart">Adicionar ao Carrinho 💜</button>
+                <div class="price-tag">
+                    <span class="current-price">R$ 189,90</span>
+                    <span class="old-price">R$ 259,90</span>
+                </div>
+
+                <button class="buy-btn">Adicionar ao Carrinho</button>
             </div>
 
         </div>
     </main>
 
     <footer>
-<<<<<<< HEAD
-        &copy; 2026 SoundStyle. Todos os direitos reservados.
-=======
-        &copy; 2026 CuteSound. Todos os direitos reservados.
->>>>>>> 7c9d6ba1b307161a251a5aff0e98562f2f19f6a6
+        &copy; 2026 SoundPulse Audio. Todos os direitos reservados.
     </footer>
 
 </body>
