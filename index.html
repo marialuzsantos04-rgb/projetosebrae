@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purple Beats | Músicas Famosas</title>
+    <title>Purple Beats | Músicas Favoritas</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -189,29 +189,29 @@
     <header>
         <a href="#" class="logo">🎧 Purple Beats</a>
         <nav>
-            <a href="#nacionais">Em Português</a>
             <a href="#internacionais">Internacionais</a>
+            <a href="#nacionais">Em Português</a>
             <a href="#favoritos">Favoritos</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Grandes Sucessos da Música</h1>
-        <p>Ouça clássicos e faixas inesquecíveis em um só lugar.</p>
+        <h1>Sua Playlist em Roxo & Preto</h1>
+        <p>Arctic Monkeys, Nirvana, Chase Atlantic e o melhor da música nacional.</p>
     </section>
 
     <div class="container">
 
-        <section id="nacionais">
-            <h2 class="section-title">🇧🇷 Músicas em Português</h2>
+        <section id="internacionais">
+            <h2 class="section-title">🌍 Músicas Internacionais</h2>
             <div class="music-grid">
 
                 <div class="music-card" data-id="1">
                     <div class="music-info">
-                        <h3>Carinhoso</h3>
-                        <p>Pixinguinha • Choro / MPB</p>
+                        <h3>Do I Wanna Know?</h3>
+                        <p>Arctic Monkeys • Indie Rock</p>
                     </div>
-                    <audio controls src="https://upload.wikimedia.org/wikipedia/commons/2/23/Pixinguinha_-_Carinhoso_%281950%29.ogg"></audio>
+                    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
                     <div class="card-actions">
                         <button class="btn-favorite" onclick="toggleFavorite(this, 1)">♥</button>
                     </div>
@@ -219,10 +219,10 @@
 
                 <div class="music-card" data-id="2">
                     <div class="music-info">
-                        <h3>Apanhei-te, Cavaquinho</h3>
-                        <p>Ernesto Nazareth • Choro</p>
+                        <h3>505</h3>
+                        <p>Arctic Monkeys • Indie Rock</p>
                     </div>
-                    <audio controls src="https://upload.wikimedia.org/wikipedia/commons/3/36/Ernesto_Nazareth_-_Apanhei-te_Cavaquinho.ogg"></audio>
+                    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"></audio>
                     <div class="card-actions">
                         <button class="btn-favorite" onclick="toggleFavorite(this, 2)">♥</button>
                     </div>
@@ -230,10 +230,10 @@
 
                 <div class="music-card" data-id="3">
                     <div class="music-info">
-                        <h3>Asa Branca</h3>
-                        <p>Luiz Gonzaga • Baião</p>
+                        <h3>Smells Like Teen Spirit</h3>
+                        <p>Nirvana • Grunge / Rock</p>
                     </div>
-                    <audio controls src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Luiz_Gonzaga_-_Asa_Branca_%281947%29.ogg"></audio>
+                    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"></audio>
                     <div class="card-actions">
                         <button class="btn-favorite" onclick="toggleFavorite(this, 3)">♥</button>
                     </div>
@@ -241,28 +241,21 @@
 
                 <div class="music-card" data-id="4">
                     <div class="music-info">
-                        <h3>Chega de Saudade</h3>
-                        <p>Tom Jobim & Vinicius de Moraes • Bossa Nova</p>
+                        <h3>Come As You Are</h3>
+                        <p>Nirvana • Grunge / Rock</p>
                     </div>
-                    <audio controls src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Tom_Jobim_-_Chega_de_Saudade.ogg"></audio>
+                    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"></audio>
                     <div class="card-actions">
                         <button class="btn-favorite" onclick="toggleFavorite(this, 4)">♥</button>
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <section id="internacionais">
-            <h2 class="section-title">🌍 Músicas Internacionais</h2>
-            <div class="music-grid">
-
                 <div class="music-card" data-id="5">
                     <div class="music-info">
-                        <h3>Symphony No. 5</h3>
-                        <p>Ludwig van Beethoven • Erudita / Clássica</p>
+                        <h3>Swim</h3>
+                        <p>Chase Atlantic • Alternative / R&B</p>
                     </div>
-                    <audio controls src="https://upload.wikimedia.org/wikipedia/commons/d/db/Ludwig_van_Beethoven_-_Symphony_No._5_in_C_minor%2C_Op._67_-_I._Allegro_con_brio.ogg"></audio>
+                    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"></audio>
                     <div class="card-actions">
                         <button class="btn-favorite" onclick="toggleFavorite(this, 5)">♥</button>
                     </div>
@@ -270,22 +263,115 @@
 
                 <div class="music-card" data-id="6">
                     <div class="music-info">
-                        <h3>Moonlight Sonata</h3>
-                        <p>Ludwig van Beethoven • Clássica</p>
+                        <h3>Into It</h3>
+                        <p>Chase Atlantic • Alternative / R&B</p>
                     </div>
-                    <audio controls src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Beethoven_Moonlight_sonata_1st_movement.ogg"></audio>
+                    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"></audio>
                     <div class="card-actions">
                         <button class="btn-favorite" onclick="toggleFavorite(this, 6)">♥</button>
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <section id="nacionais">
+            <h2 class="section-title">🇧🇷 Músicas em Português</h2>
+            <div class="music-grid">
+
                 <div class="music-card" data-id="7">
                     <div class="music-info">
-                        <h3>Four Seasons (Spring)</h3>
-                        <p>Antonio Vivaldi • Barroco / Clássica</p>
+                        <h3>Tempo Perdido</h3>
+                        <p>Legião Urbana • Rock Nacional</p>
                     </div>
-                    <audio controls src="https://upload.wikimedia.org/wikipedia/commons/3/36/Vivaldi_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg"></audio>
+                    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"></audio>
                     <div class="card-actions">
                         <button class="btn-favorite" onclick="toggleFavorite(this, 7)">♥</button>
                     </div>
                 </div>
+
+                <div class="music-card" data-id="8">
+                    <div class="music-info">
+                        <h3>Sozinho</h3>
+                        <p>Caetano Veloso • MPB</p>
+                    </div>
+                    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"></audio>
+                    <div class="card-actions">
+                        <button class="btn-favorite" onclick="toggleFavorite(this, 8)">♥</button>
+                    </div>
+                </div>
+
+                <div class="music-card" data-id="9">
+                    <div class="music-info">
+                        <h3>Carinhoso</h3>
+                        <p>Pixinguinha • Choro / Clássico</p>
+                    </div>
+                    <audio controls src="https://upload.wikimedia.org/wikipedia/commons/2/23/Pixinguinha_-_Carinhoso_%281950%29.ogg"></audio>
+                    <div class="card-actions">
+                        <button class="btn-favorite" onclick="toggleFavorite(this, 9)">♥</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="favoritos">
+            <h2 class="section-title">⭐ Meus Favoritos</h2>
+            <div class="music-grid" id="favoritesGrid">
+                <p class="empty-msg" id="emptyMsg">Você ainda não adicionou nenhuma música aos favoritos.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Purple Beats. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const favorites = new Set();
+
+        function toggleFavorite(btn, songId) {
+            const card = btn.closest('.music-card');
+            const favoritesGrid = document.getElementById('favoritesGrid');
+            const emptyMsg = document.getElementById('emptyMsg');
+
+            if (favorites.has(songId)) {
+                // Remover dos favoritos
+                favorites.delete(songId);
+                btn.classList.remove('active');
+                
+                // Remover do grid de favoritos se estiver lá
+                const favCard = favoritesGrid.querySelector(`[data-fav-id="${songId}"]`);
+                if (favCard) favCard.remove();
+
+            } else {
+                // Adicionar aos favoritos
+                favorites.add(songId);
+                btn.classList.add('active');
+
+                // Clonar o card para a seção de favoritos
+                const cloneCard = card.cloneNode(true);
+                cloneCard.setAttribute('data-fav-id', songId);
+                
+                // Atualizar o botão no card clonado
+                const cloneBtn = cloneCard.querySelector('.btn-favorite');
+                cloneBtn.classList.add('active');
+                cloneBtn.onclick = function() {
+                    toggleFavorite(btn, songId);
+                };
+
+                favoritesGrid.appendChild(cloneCard);
+            }
+
+            // Exibir ou ocultar mensagem de lista vazia
+            if (favorites.size > 0) {
+                emptyMsg.style.display = 'none';
+            } else {
+                emptyMsg.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
