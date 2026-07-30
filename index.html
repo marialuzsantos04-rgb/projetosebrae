@@ -3,383 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Whisper of Starfall | Edição Oficial de Luxo</title>
+    <title>Mini Caixinha Cute - Loja Virtual</title>
     <style>
-        /* CSS Integrado - Tema Galáxia (Roxo e Azul Profundo) */
+        /* Estilos Globais e Tema Preto & Lilás Cute */
         :root {
-            --bg-space: #070510;
-            --purple-deep: #150a2a;
-            --purple-glow: #7b2cbf;
-            --purple-light: #9d4edd;
-            --blue-galaxy: #0d1b2a;
-            --blue-nebula: #1b263b;
-            --cyan-starlight: #4cc9f0;
-            --gold-accent: #ffd700;
-            --text-main: #f8f9fa;
-            --text-muted: #c7d2fe;
+            --bg-dark: #121214;
+            --card-bg: #1e1e24;
+            --accent-purple: #c896ff;
+            --accent-soft: #e0c3fc;
+            --text-light: #f5f5f7;
+            --text-muted: #a0a0b0;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--bg-space);
-            background-image: 
-                radial-gradient(circle at 15% 20%, rgba(123, 44, 191, 0.35) 0%, transparent 45%),
-                radial-gradient(circle at 85% 75%, rgba(76, 201, 240, 0.25) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(27, 38, 59, 0.5) 0%, transparent 60%);
-            color: var(--text-main);
-            line-height: 1.7;
-            overflow-x: hidden;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Cabeçalho */
         header {
-            background: rgba(7, 5, 16, 0.85);
-            backdrop-filter: blur(12px);
-            padding: 1.2rem 8%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background-color: #1a1a20;
+            padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(123, 44, 191, 0.4);
+            border-bottom: 2px solid var(--accent-purple);
         }
 
-        .brand {
-            font-size: 1.6rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, var(--gold-accent), #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-purple);
+            text-shadow: 0 0 8px rgba(200, 150, 255, 0.4);
         }
 
-        .btn-header {
-            background: linear-gradient(135deg, var(--purple-glow), var(--cyan-starlight));
-            color: #fff;
-            padding: 0.6rem 1.6rem;
-            font-weight: 700;
+        .cart-icon {
+            background-color: var(--accent-purple);
+            color: var(--bg-dark);
+            padding: 10px 18px;
             border-radius: 20px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(123, 44, 191, 0.5);
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
         }
 
-        .btn-header:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(76, 201, 240, 0.8);
+        .cart-icon:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-soft);
         }
 
-        /* Layout Principal */
-        .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 4rem;
+        /* Área do Produto */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 2rem 0;
+            padding: 40px 20px;
         }
 
-        .book-container {
-            text-align: center;
-            position: relative;
-        }
-
-        .book-container::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(123, 44, 191, 0.6) 0%, rgba(76, 201, 240, 0.2) 60%, transparent 80%);
-            filter: blur(40px);
-            z-index: -1;
-            border-radius: 50%;
-        }
-
-        .book-img {
+        .product-card {
+            background-color: var(--card-bg);
+            border: 2px solid rgba(200, 150, 255, 0.2);
+            border-radius: 24px;
             width: 100%;
-            max-width: 440px;
+            max-width: 850px;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(200, 150, 255, 0.15);
+        }
+
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: #262630;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .product-image img {
+            max-width: 100%;
             border-radius: 16px;
-            box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.7),
-                0 0 40px rgba(123, 44, 191, 0.6),
-                0 0 80px rgba(76, 201, 240, 0.2);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .book-img:hover {
-            transform: scale(1.03) rotate(-1deg);
-            box-shadow: 
-                0 20px 45px rgba(0, 0, 0, 0.8),
-                0 0 50px rgba(123, 44, 191, 0.8),
-                0 0 100px rgba(76, 201, 240, 0.4);
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        /* Informações do Livro */
-        .book-details h1 {
-            font-size: 3.2rem;
-            line-height: 1.15;
+        .tag {
+            align-self: flex-start;
+            background-color: rgba(200, 150, 255, 0.2);
+            color: var(--accent-purple);
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
             color: #ffffff;
-            margin-bottom: 0.4rem;
-            text-shadow: 0 0 20px rgba(123, 44, 191, 0.5);
         }
 
-        .author-name {
-            font-size: 1.3rem;
-            color: var(--cyan-starlight);
-            margin-bottom: 1.2rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        .tagline {
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--gold-accent);
-            margin-bottom: 1.8rem;
-            padding-left: 1rem;
-            border-left: 3px solid var(--purple-glow);
-        }
-
-        .synopsis-box {
-            background: rgba(21, 10, 42, 0.75);
-            border: 1px solid rgba(123, 44, 191, 0.35);
-            border-radius: 16px;
-            padding: 1.8rem;
-            backdrop-filter: blur(8px);
-            margin-bottom: 2rem;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
-        }
-
-        .synopsis-box h3 {
-            color: var(--purple-light);
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .synopsis-box p {
+        .product-description {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
         }
 
         .price-container {
-            display: flex;
-            align-items: baseline;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 25px;
         }
 
-        .price-current {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
+        .price {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--accent-purple);
         }
 
-        .price-original {
-            font-size: 1.4rem;
-            text-decoration: line-through;
-            color: #6c757d;
-        }
-
-        .badge-discount {
-            background: var(--purple-glow);
-            color: #fff;
-            padding: 0.3rem 0.8rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
-        .btn-buy-now {
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            background: linear-gradient(135deg, var(--purple-glow) 0%, var(--blue-nebula) 50%, var(--cyan-starlight) 100%);
-            background-size: 200% auto;
-            color: #ffffff;
-            padding: 1.2rem 2.5rem;
-            font-size: 1.3rem;
-            font-weight: 800;
-            border: none;
-            border-radius: 40px;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 0 25px rgba(123, 44, 191, 0.6);
-            transition: all 0.4s ease;
-        }
-
-        .btn-buy-now:hover {
-            background-position: right center;
-            box-shadow: 0 0 40px rgba(76, 201, 240, 0.9);
-            transform: translateY(-3px);
-        }
-
-        /* Seção de Características */
-        .features-section {
-            margin-top: 5rem;
-            background: rgba(13, 27, 42, 0.6);
-            border: 1px solid rgba(123, 44, 191, 0.3);
-            border-radius: 20px;
-            padding: 3rem 2.5rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .features-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--gold-accent);
-            margin-bottom: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .grid-specs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-
-        .spec-card {
-            background: rgba(21, 10, 42, 0.6);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--cyan-starlight);
-            transition: transform 0.3s ease;
-        }
-
-        .spec-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .spec-card h4 {
-            color: var(--purple-light);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .spec-card p {
+        .price-info {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            font-size: 0.95rem;
         }
 
+        /* Botão Adicionar ao Carrinho */
+        .btn-add-cart {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-soft));
+            color: var(--bg-dark);
+            border: none;
+            padding: 16px 24px;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(200, 150, 255, 0.3);
+        }
+
+        .btn-add-cart:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(200, 150, 255, 0.5);
+        }
+
+        /* Rodapé */
         footer {
             text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 5rem;
-            border-top: 1px solid rgba(123, 44, 191, 0.2);
-            color: #8a99ad;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 900px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .tagline {
-                border-left: none;
-                padding-left: 0;
-            }
-            .price-container {
-                justify-content: center;
-            }
-            .book-details h1 {
-                font-size: 2.4rem;
-            }
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(250, 250, 250, 0.05);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="brand">
-            ✨ EDITORA ASTRAL
-        </div>
-        <a href="#comprar" class="btn-header">Garantir Meu Exemplar</a>
+        <div class="logo">✨ CuteSound</div>
+        <div class="cart-icon">🛒 Carrinho (0)</div>
     </header>
 
-    <main class="container">
-        <section class="hero">
-            <div class="book-container">
-                <img src="http://googleusercontent.com/image_generation_content/0" 
-                     alt="Capa do livro The Whisper of Starfall" 
-                     class="book-img">
+    <main>
+        <div class="product-card">
+            
+            <div class="product-image">
+                <img src="https://via.placeholder.com/350x350/2b2438/c896ff?text=Caixinha+de+Som+Cute" alt="Caixinha de Som Lilás">
             </div>
 
-            <div class="book-details">
-                <h1>The Whisper of Starfall</h1>
-                <p class="author-name">Por Aurelia Vance</p>
-                <p class="tagline">"Quando o céu se rasga em luz, os dragões adormecidos das estrelas voltam a despertar."</p>
-
-                <div class="synopsis-box">
-                    <h3>🌌 Sinopse Oficial</h3>
-                    <p>
-                        Nas terras lendárias de <strong>Aethelgard</strong>, a magia não nasce da terra, mas do vislumbre das estrelas cadentes. Durante séculos, a Ordem dos Observadores manteve o equilíbrio lendo o firmamento — até que um meteoro de cristal negro cai sobre os picos proibidos.
-                    </p>
-                    <p>
-                        Lyra, uma jovem astrônoma relegada aos arquivos, descobre o segredo guardado pelas constelações: as estrelas cadentes não são rochas incandescentes, mas os ovos adormecidos dos lendários <strong>Dragões Cósmicos</strong>. Quando forças sombrias ameaçam reivindicar esse poder celestial, Lyra precisa cruzar o reino para proteger o último filhote estelar antes que a própria luz do universo se apague.
-                    </p>
-                </div>
+            <div class="product-info">
+                <span class="tag">EDITION LIMITED 💜</span>
+                <h1 class="product-title">Mini Caixa de Som Cute Bluetooth</h1>
+                
+                <p class="product-description">
+                    Sua música favorita com um toque de fofura! Design compacto e moderno em tom lilás pastel, iluminação LED suave, conexão Bluetooth rápida e som limpo de alta qualidade para deixar seu quarto super aconchegante.
+                </p>
 
                 <div class="price-container">
-                    <span class="price-current">R$ 69,90</span>
-                    <span class="price-original">R$ 89,90</span>
-                    <span class="badge-discount">-22% OFF</span>
+                    <span class="price">R$ 129,90</span>
+                    <p class="price-info">em até 3x de R$ 43,30 sem juros</p>
                 </div>
 
-                <a href="#comprar" id="comprar" class="btn-buy-now">
-                    🛒 COMPRAR EDIÇÃO DE LUXO
-                </a>
+                <button class="btn-add-cart">Adicionar ao Carrinho 💜</button>
             </div>
-        </section>
 
-        <section class="features-section">
-            <h2 class="features-title">✨ Detalhes da Edição de Colecionador</h2>
-            <div class="grid-specs">
-                <div class="spec-card">
-                    <h4>📖 Formato Especial</h4>
-                    <p>Capa dura com relevo em folha de ouro, pintura trilateral nos cortes e verniz localizado.</p>
-                </div>
-                <div class="spec-card">
-                    <h4>🎨 Arte Interna</h4>
-                    <p>Contém mapa em página dupla, ilustrações exclusivas e capitulares personalizadas.</p>
-                </div>
-                <div class="spec-card">
-                    <h4>🎁 Brindes Exclusivos</h4>
-                    <p>Acompanha marcador em metal trabalhado e flâmula do reino de Aethelgard.</p>
-                </div>
-                <div class="spec-card">
-                    <h4>📜 Especificações</h4>
-                    <p>480 páginas • Papel Pólen Soft 80g • Tradução Oficial por Editora Astral.</p>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Editora Astral. Todos os direitos reservados. Design Galáctico e Fantasia Imersiva.</p>
+        &copy; 2026 CuteSound. Todos os direitos reservados.
     </footer>
 
 </body>
