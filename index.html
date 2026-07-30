@@ -41,4 +41,346 @@
         header {
             background: rgba(7, 5, 16, 0.85);
             backdrop-filter: blur(12px);
-            padding: 1.2
+            padding: 1.2rem 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(123, 44, 191, 0.4);
+        }
+
+        .brand {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--gold-accent), #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-header {
+            background: linear-gradient(135deg, var(--purple-glow), var(--cyan-starlight));
+            color: #fff;
+            padding: 0.6rem 1.6rem;
+            font-weight: 700;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(123, 44, 191, 0.5);
+        }
+
+        .btn-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(76, 201, 240, 0.8);
+        }
+
+        /* Layout Principal */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .book-container {
+            text-align: center;
+            position: relative;
+        }
+
+        .book-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(123, 44, 191, 0.6) 0%, rgba(76, 201, 240, 0.2) 60%, transparent 80%);
+            filter: blur(40px);
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        .book-img {
+            width: 100%;
+            max-width: 440px;
+            border-radius: 16px;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.7),
+                0 0 40px rgba(123, 44, 191, 0.6),
+                0 0 80px rgba(76, 201, 240, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .book-img:hover {
+            transform: scale(1.03) rotate(-1deg);
+            box-shadow: 
+                0 20px 45px rgba(0, 0, 0, 0.8),
+                0 0 50px rgba(123, 44, 191, 0.8),
+                0 0 100px rgba(76, 201, 240, 0.4);
+        }
+
+        /* Informações do Livro */
+        .book-details h1 {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        .author-name {
+            font-size: 1.3rem;
+            color: var(--cyan-starlight);
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--gold-accent);
+            margin-bottom: 1.8rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--purple-glow);
+        }
+
+        .synopsis-box {
+            background: rgba(21, 10, 42, 0.75);
+            border: 1px solid rgba(123, 44, 191, 0.35);
+            border-radius: 16px;
+            padding: 1.8rem;
+            backdrop-filter: blur(8px);
+            margin-bottom: 2rem;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .synopsis-box h3 {
+            color: var(--purple-light);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .synopsis-box p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .price-current {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
+        }
+
+        .price-original {
+            font-size: 1.4rem;
+            text-decoration: line-through;
+            color: #6c757d;
+        }
+
+        .badge-discount {
+            background: var(--purple-glow);
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .btn-buy-now {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--purple-glow) 0%, var(--blue-nebula) 50%, var(--cyan-starlight) 100%);
+            background-size: 200% auto;
+            color: #ffffff;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 0 25px rgba(123, 44, 191, 0.6);
+            transition: all 0.4s ease;
+        }
+
+        .btn-buy-now:hover {
+            background-position: right center;
+            box-shadow: 0 0 40px rgba(76, 201, 240, 0.9);
+            transform: translateY(-3px);
+        }
+
+        /* Seção de Características */
+        .features-section {
+            margin-top: 5rem;
+            background: rgba(13, 27, 42, 0.6);
+            border: 1px solid rgba(123, 44, 191, 0.3);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--gold-accent);
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .grid-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .spec-card {
+            background: rgba(21, 10, 42, 0.6);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--cyan-starlight);
+            transition: transform 0.3s ease;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .spec-card h4 {
+            color: var(--purple-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(123, 44, 191, 0.2);
+            color: #8a99ad;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .tagline {
+                border-left: none;
+                padding-left: 0;
+            }
+            .price-container {
+                justify-content: center;
+            }
+            .book-details h1 {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            ✨ EDITORA ASTRAL
+        </div>
+        <a href="#comprar" class="btn-header">Garantir Meu Exemplar</a>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="book-container">
+                <img src="http://googleusercontent.com/image_generation_content/0" 
+                     alt="Capa do livro The Whisper of Starfall" 
+                     class="book-img">
+            </div>
+
+            <div class="book-details">
+                <h1>The Whisper of Starfall</h1>
+                <p class="author-name">Por Aurelia Vance</p>
+                <p class="tagline">"Quando o céu se rasga em luz, os dragões adormecidos das estrelas voltam a despertar."</p>
+
+                <div class="synopsis-box">
+                    <h3>🌌 Sinopse Oficial</h3>
+                    <p>
+                        Nas terras lendárias de <strong>Aethelgard</strong>, a magia não nasce da terra, mas do vislumbre das estrelas cadentes. Durante séculos, a Ordem dos Observadores manteve o equilíbrio lendo o firmamento — até que um meteoro de cristal negro cai sobre os picos proibidos.
+                    </p>
+                    <p>
+                        Lyra, uma jovem astrônoma relegada aos arquivos, descobre o segredo guardado pelas constelações: as estrelas cadentes não são rochas incandescentes, mas os ovos adormecidos dos lendários <strong>Dragões Cósmicos</strong>. Quando forças sombrias ameaçam reivindicar esse poder celestial, Lyra precisa cruzar o reino para proteger o último filhote estelar antes que a própria luz do universo se apague.
+                    </p>
+                </div>
+
+                <div class="price-container">
+                    <span class="price-current">R$ 69,90</span>
+                    <span class="price-original">R$ 89,90</span>
+                    <span class="badge-discount">-22% OFF</span>
+                </div>
+
+                <a href="#comprar" id="comprar" class="btn-buy-now">
+                    🛒 COMPRAR EDIÇÃO DE LUXO
+                </a>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2 class="features-title">✨ Detalhes da Edição de Colecionador</h2>
+            <div class="grid-specs">
+                <div class="spec-card">
+                    <h4>📖 Formato Especial</h4>
+                    <p>Capa dura com relevo em folha de ouro, pintura trilateral nos cortes e verniz localizado.</p>
+                </div>
+                <div class="spec-card">
+                    <h4>🎨 Arte Interna</h4>
+                    <p>Contém mapa em página dupla, ilustrações exclusivas e capitulares personalizadas.</p>
+                </div>
+                <div class="spec-card">
+                    <h4>🎁 Brindes Exclusivos</h4>
+                    <p>Acompanha marcador em metal trabalhado e flâmula do reino de Aethelgard.</p>
+                </div>
+                <div class="spec-card">
+                    <h4>📜 Especificações</h4>
+                    <p>480 páginas • Papel Pólen Soft 80g • Tradução Oficial por Editora Astral.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Editora Astral. Todos os direitos reservados. Design Galáctico e Fantasia Imersiva.</p>
+    </footer>
+
+</body>
+</html>
